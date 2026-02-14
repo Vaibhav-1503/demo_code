@@ -29,7 +29,9 @@ def generate_short_code(length=6):
 def shorten_url(request: URLRequest):
     short_code = generate_short_code()
     url_store[short_code] = request.original_url
-    return {"short_url": f"http://localhost:8000/{short_code}"}
+    # return {"short_url": f"http://localhost:8000/{short_code}"}
+    return {"short_url": f"http://184.72.211.88:8000/{short_code}"}
+
 
 @app.get("/{short_code}")
 def redirect_url(short_code: str):
